@@ -1,6 +1,8 @@
 import express from 'express'
 import index from './app/index.html'
 
+const timeStarted = new Date()
+
 # A simple state that exists until the server stops
 const state = {
 	count: 0,
@@ -26,6 +28,12 @@ app.post('/increment', jsonBody) do(req,res)
 app.get('/count') do(req,res)
 	res.send({
 		count: state.count
+	})
+
+app.get('/api/health') do(req,res)
+	res.send({
+		time: new Date().toUTCString(),
+		upSince: timeStarted.toUTCString()
 	})
 
 # catch-all route that returns our index.html

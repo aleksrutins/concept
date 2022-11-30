@@ -1,5 +1,7 @@
 # syntax = docker/dockerfile:1.2
 FROM clojure:openjdk-17 AS build
+ARG PORT
+ENV PORT=${PORT}
 
 WORKDIR /
 COPY . /

@@ -1,0 +1,8 @@
+# IntelliJ
+*.iml
+.idea/
+
+# clj-kondo
+.clj-kondo/.cache/
+.calva/output-window/
+.lsp/.cache/

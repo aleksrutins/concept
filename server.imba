@@ -1,5 +1,6 @@
 import express from 'express'
 import index from './app/index.html'
+import auth from './auth'
 
 const timeStarted = new Date()
 
@@ -14,6 +15,8 @@ const port = process.env.PORT or 3000
 
 # Express works like usual, so we can allow JSON in the POST request:
 const jsonBody = express.json({ limit: '1kb' })
+
+app.use '/auth', auth
 
 app.post('/increment', jsonBody) do(req,res)
 	# A good exercise here is to add validation for the request body.

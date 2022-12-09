@@ -4,5 +4,8 @@
         "@opam/dune": "*",
         "@opam/dream": "1.0.0~alpha4",
         "@opam/ocaml-lsp-server": "*"
+    },
+    "resolutions": {
+        "@opam/conf-libssl": "3"
     }
 }

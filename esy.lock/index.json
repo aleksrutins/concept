@@ -1,5 +1,5 @@
 {
-  "checksum": "9dbc3ea4ba584863cb373b6ab8edfec3",
+  "checksum": "a2d7bfcbb3d76eff953cd189f893fd64",
   "root": "concept@link-dev:./package.json",
   "node": {
     "yarn-pkg-config@github:esy-ocaml/yarn-pkg-config#db3a0b63883606dd57c54a7158d560d6cba8cd79@d41d8cd9": {
@@ -32,6 +32,25 @@
       "dependencies": [],
       "devDependencies": []
     },
+    "esy-openssl@archive:https://www.openssl.org/source/openssl-1.1.1l.tar.gz#sha256:0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1@d2b1c9f1": {
+      "id":
+        "esy-openssl@archive:https://www.openssl.org/source/openssl-1.1.1l.tar.gz#sha256:0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1@d2b1c9f1",
+      "name": "esy-openssl",
+      "version":
+        "archive:https://www.openssl.org/source/openssl-1.1.1l.tar.gz#sha256:0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1",
+      "source": {
+        "type": "install",
+        "source": [
+          "archive:https://www.openssl.org/source/openssl-1.1.1l.tar.gz#sha256:0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1"
+        ]
+      },
+      "overrides": [ "esy.lock/overrides/d2b1c9f139f83685b7ed6db48df6a440" ],
+      "dependencies": [
+        "@opam/conf-pkg-config@opam:2@85f8644d",
+        "@opam/conf-autoconf@github:esy-packages/esy-autoconf:package.json#fb93edf@d41d8cd9"
+      ],
+      "devDependencies": []
+    },
     "esy-libev@4.33.1@d41d8cd9": {
       "id": "esy-libev@4.33.1@d41d8cd9",
       "name": "esy-libev",
@@ -40,6 +59,22 @@
         "type": "install",
         "source": [
           "archive:https://registry.npmjs.org/esy-libev/-/esy-libev-4.33.1.tgz#sha1:a4a1588b2a79a37b9af9b8058f4b032c524c9127"
+        ]
+      },
+      "overrides": [],
+      "dependencies": [],
+      "devDependencies": []
+    },
+    "esy-help2man@github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443@d41d8cd9": {
+      "id":
+        "esy-help2man@github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443@d41d8cd9",
+      "name": "esy-help2man",
+      "version":
+        "github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443",
+      "source": {
+        "type": "install",
+        "source": [
+          "github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443"
         ]
       },
       "overrides": [],
@@ -329,7 +364,7 @@
         "ocaml@4.14.0@d41d8cd9",
         "@opam/dune-configurator@opam:3.6.1@966be260",
         "@opam/dune@opam:3.6.1@662f326b",
-        "@opam/conf-libssl@opam:4@f8a1c73f",
+        "@opam/conf-libssl@opam:3@e3469184",
         "@opam/base-unix@opam:base@87d0b2eb",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
@@ -337,7 +372,7 @@
         "ocaml@4.14.0@d41d8cd9",
         "@opam/dune-configurator@opam:3.6.1@966be260",
         "@opam/dune@opam:3.6.1@662f326b",
-        "@opam/conf-libssl@opam:4@f8a1c73f",
+        "@opam/conf-libssl@opam:3@e3469184",
         "@opam/base-unix@opam:base@87d0b2eb"
       ]
     },
@@ -2148,21 +2183,27 @@
       ],
       "devDependencies": []
     },
-    "@opam/conf-libssl@opam:4@f8a1c73f": {
-      "id": "@opam/conf-libssl@opam:4@f8a1c73f",
+    "@opam/conf-libssl@opam:3@e3469184": {
+      "id": "@opam/conf-libssl@opam:3@e3469184",
       "name": "@opam/conf-libssl",
-      "version": "opam:4",
+      "version": "opam:3",
       "source": {
         "type": "install",
         "source": [ "no-source:" ],
         "opam": {
           "name": "conf-libssl",
-          "version": "4",
-          "path": "esy.lock/opam/conf-libssl.4"
+          "version": "3",
+          "path": "esy.lock/opam/conf-libssl.3"
         }
       },
-      "overrides": [],
+      "overrides": [
+        {
+          "opamoverride":
+            "esy.lock/overrides/opam__s__conf_libssl_opam__c__3_opam_override"
+        }
+      ],
       "dependencies": [
+        "esy-openssl@archive:https://www.openssl.org/source/openssl-1.1.1l.tar.gz#sha256:0b7a3e5e59c34827fe0c3a74b7ec8baef302b98fa80088d7f9153aa16fa76bd1@d2b1c9f1",
         "@opam/conf-pkg-config@opam:2@85f8644d",
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
@@ -2192,6 +2233,21 @@
         "@esy-ocaml/substs@0.0.1@d41d8cd9"
       ],
       "devDependencies": [ "ocaml@4.14.0@d41d8cd9" ]
+    },
+    "@opam/conf-autoconf@github:esy-packages/esy-autoconf:package.json#fb93edf@d41d8cd9": {
+      "id":
+        "@opam/conf-autoconf@github:esy-packages/esy-autoconf:package.json#fb93edf@d41d8cd9",
+      "name": "@opam/conf-autoconf",
+      "version": "github:esy-packages/esy-autoconf:package.json#fb93edf",
+      "source": {
+        "type": "install",
+        "source": [ "github:esy-packages/esy-autoconf:package.json#fb93edf" ]
+      },
+      "overrides": [],
+      "dependencies": [
+        "esy-help2man@github:esy-packages/esy-help2man#c8e6931d1dcf58a81bd801145a777fd3b115c443@d41d8cd9"
+      ],
+      "devDependencies": []
     },
     "@opam/chrome-trace@opam:3.6.1@69703ee2": {
       "id": "@opam/chrome-trace@opam:3.6.1@69703ee2",

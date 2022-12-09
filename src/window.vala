@@ -21,8 +21,6 @@
 namespace Concept {
     [GtkTemplate (ui = "/com/rutins/aleks/Concept/window.ui")]
     public class Window : Adw.ApplicationWindow {
-        [GtkChild]
-        private unowned Gtk.Label label;
 
         public Window (Gtk.Application app) {
             Object (application: app);

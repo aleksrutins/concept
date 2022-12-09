@@ -18,12 +18,16 @@ blueprints = custom_target('blueprints',
   command: [find_program('blueprint-compiler'), 'batch-compile', '@OUTPUT@', '@CURRENT_SOURCE_DIR@', '@INPUT@'],
 )
 
-concept_sources += gnome.compile_resources('concept-resources',
-  'concept.gresource.xml',
-  c_name: 'concept',
-  dependencies: blueprints,
+res = declare_dependency(
+  sources: blueprints,
 )
 
+concept_deps += res
+concept_sources += gnome.compile_resources('concept-resources',
+    'concept.gresource.xml',
+    c_name: 'concept',
+    dependencies: blueprints,
+  )
 executable('concept', concept_sources,
   dependencies: concept_deps,
        install: true,

@@ -1,0 +1,14 @@
+{
+    "files.watcherExclude": {
+        "**/.git/objects/**": true,
+        "**/.git/subtree-cache/**": true,
+        "**/node_modules/*/**": true,
+        "**/.hg/store/**": true,
+        ".flatpak/**": true,
+        "_build/**": true
+    },
+    "mesonbuild.configureOnOpen": false,
+    "mesonbuild.buildFolder": "_build",
+    "mesonbuild.mesonPath": "/home/aleks/Projects/concept/.flatpak/meson.sh",
+    "vala.languageServerPath": "/home/aleks/Projects/concept/.flatpak/vala-language-server.sh"
+}

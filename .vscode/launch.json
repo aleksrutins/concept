@@ -1,0 +1,18 @@
+{
+    "configurations": [
+        {
+            "name": "Build Blueprints",
+            "type": "f5anything",
+            "request": "launch",
+            "command": "${workspaceFolderBasename}/build-blueprints.sh"
+        },
+        {
+            "name": "Build & Run",  
+            "type": "f5anything",
+            "request": "launch",
+            "vscCommand": "flatpak-vscode.buildAndRun",
+            "preLaunchTask": "Build Blueprints"
+        }
+
+    ]
+}

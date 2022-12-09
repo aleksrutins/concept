@@ -1,0 +1,6 @@
+data/com.rutins.aleks.Concept.desktop.in
+data/com.rutins.aleks.Concept.appdata.xml.in
+data/com.rutins.aleks.Concept.gschema.xml
+src/main.vala
+src/window.vala
+src/window.ui

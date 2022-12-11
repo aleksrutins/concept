@@ -5,10 +5,11 @@ use dioxus::prelude::*;
 
 pub fn Sidebar(cx: Scope) -> Element {
     let note_tree = use_atom_ref(&cx, CFG);
-    let walker = cx.use_hook(|_| note_tree.read().walk().into_iter().filter_map(Result::ok));
+    let walker = note_tree.read().walk().into_iter().filter_map(Result::ok);
     cx.render(
         rsx! {
             div {
+                class: "sidebar",
                 walker.map(|item| {
                     let item_name = item.path().file_name().map(|item| item.to_str()).flatten()?.to_string();
                     Some(rsx!(

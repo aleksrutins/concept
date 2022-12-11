@@ -1,15 +1,29 @@
 .app-view {
     display: flex;
     flex-direction: row;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+:root, html, body {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
 }
 .sidebar {
     flex-shrink: 1;
     background-color: rgb(211, 211, 211);
-    overflow: auto;
+    overflow-y: auto;
+    text-overflow: ellipsis;
+    padding: 5px;
+    resize: horizontal;
 }
 
 .content {
     flex-grow: 1;
+    box-sizing: border-box;
+    padding: 10px;
+    overflow-y: auto;
 }
 
 .sidebar a {
@@ -17,6 +31,7 @@
     margin: 3px;
     padding: 3px;
     border-radius: 3px;
+    box-sizing: border-box;
 }
 
 .sidebar a:hover {

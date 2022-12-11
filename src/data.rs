@@ -33,7 +33,10 @@ impl NoteTree {
         self.current_note = Note::open(path).ok();
     }
     pub fn render_current(&self) -> Option<String> {
-        self.current_note.as_ref().map(|note| &note.content).map(|content| markdown::to_html(content))
+        self.current_note
+            .as_ref()
+            .map(|note| &note.content)
+            .map(|content| markdown::to_html(content))
     }
 }
 

@@ -1,6 +1,6 @@
-use std::{rc::Rc, sync::Arc};
 
-use crate::{data::NoteTree, CFG};
+
+use crate::CFG;
 use dioxus::prelude::*;
 
 pub fn Sidebar(cx: Scope) -> Element {
@@ -11,7 +11,7 @@ pub fn Sidebar(cx: Scope) -> Element {
             div {
                 class: "sidebar",
                 walker.map(|item| {
-                    let item_name = item.path().file_name().map(|item| item.to_str()).flatten()?.to_string();
+                    let item_name = item.path().file_name().and_then(|item| item.to_str())?.to_string();
                     Some(rsx!(
                         a {
                             onclick: move |_evt| {
